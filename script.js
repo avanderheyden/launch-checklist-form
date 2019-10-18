@@ -6,23 +6,32 @@ window.addEventListener('load', function () {
       let copilotName = document.querySelector("input[name=copilotName]");
       let fuelLevel = document.querySelector("input[name=fuelLevel]");
       let cargoWeight = document.querySelector("input[name=cargoWeight]");
-      if (pilotName.value === " " || copilotName.value === " " || fuelLevel.value === " " || cargoWeight.value === " ") {
+
+      event.preventDefault();
+
+      if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoWeight.value === "") {
          alert("All fields are required!");
-         event.preventDefault();
+         if (isNaN(pilotName.value)) {
+         } else if (!NaN(pilotName.value))
+            alert("Make sure to enter valid information for each field!");
       }
-      // this.document.getElementById("launchStatusCheck").onclick = function () {
-      let cargoStatus = document.getElementById("cargoStatus");
-      document.getElementById("cargoStatus").innerHTML = "Too much mass for shuttle to take off";
-
-      let launchStatus = document.getElementById("launchStatus");
-      document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch";
-
-      let textColor = document.querySelector("launchStatus");
-      document.querySelector("launchStatus").style.color = "red";
-
-      // }
    });
 });
+// console.log(typeof pilotName.value);
+
+   // this.document.getElementById("launchStatusCheck").onclick = function () {
+   //    let cargoStatus = document.getElementById("cargoStatus");
+   //    document.getElementById("cargoStatus").innerHTML = "Too much mass for shuttle to take off";
+
+   //    let launchStatus = document.getElementById("launchStatus");
+   //    document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch";
+
+   //    let textColor = document.querySelector("launchStatus");
+   //    document.querySelector("launchStatus").style.color = "red";
+
+   // }
+// });
+
 
 /* This block of code shows how to format the HTML once you fetch some planetary JSON!
 <h2>Mission Destination</h2>
@@ -34,4 +43,8 @@ window.addEventListener('load', function () {
    <li>Number of Moons: ${}</li>
 </ol>
 <img src="${}">
-*/
+// */
+// document.getElementById("pilotName").required = true;
+//       document.getElementById("copilotName").required = true;
+//       document.getElementById("fuelLevel").required = true;
+//       document.getElementById("cargoWeight").required = true;
