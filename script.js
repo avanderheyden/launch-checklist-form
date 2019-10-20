@@ -25,12 +25,35 @@ window.addEventListener('load', function () {
          alert("Make sure to enter valid information for each field!");
       }
    });
-});
-// console.log(typeof pilotName.value);
 
-   // this.document.getElementById("launchStatusCheck").onclick = function () {
-   //    let cargoStatus = document.getElementById("cargoStatus");
-   //    document.getElementById("cargoStatus").innerHTML = "Too much mass for shuttle to take off";
+   this.document.getElementById("formSubmit").onclick = function () {
+      let launchStatus = document.getElementById("launchStatus");
+      let fuelLevel = document.getElementById('fuelLevel');
+      let cargoMass = document.getElementById('cargoMass');
+      if (fuelLevel < 10000 || cargoMass > 10000) {
+         document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch";
+      } else if (fuelLevel >= 10000 || cargoMass <= 10000) {
+         document.getElementById("launchStatus").innerHTML = "Shuttle is ready for launch";
+      }
+   }
+});
+
+// this.document.getElementById("formSubmit").onclick = function () {
+//    let launchStatus = document.getElementById("launchStatus");
+
+// function faultyItemsVisible() {
+//    let faultyItems = document.getElementById('faultyItems');
+//    let fuelLevel = document.getElementById('fuelLevel');
+//    if (fuelLevel <= 10000) {
+//       faultyItems.style.visibility = 'visible';
+//    } else if (cargoMass >= 10000) {
+//       faultyItems.style.visibility = 'visible';
+//       document.getElementById("launchStatus").innerHTML = "Too much mass for shuttle to take off";
+//    }
+// }
+
+
+
 
    //    let launchStatus = document.getElementById("launchStatus");
    //    document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch";
@@ -41,6 +64,7 @@ window.addEventListener('load', function () {
    // }
 // });
 
+// 
 
 /* This block of code shows how to format the HTML once you fetch some planetary JSON!
 <h2>Mission Destination</h2>
@@ -51,9 +75,4 @@ window.addEventListener('load', function () {
    <li>Distance from Earth: ${}</li>
    <li>Number of Moons: ${}</li>
 </ol>
-<img src="${}">
-// */
-// document.getElementById("pilotName").required = true;
-//       document.getElementById("copilotName").required = true;
-//       document.getElementById("fuelLevel").required = true;
-//       document.getElementById("cargoWeight").required = true;
+<img src="${}">*/
